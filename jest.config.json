@@ -1,0 +1,25 @@
+{
+  "transform": {
+    ".(ts)": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "^~(.*)$": "<rootDir>/src/$1",
+    "^helpers(.*)$": "<rootDir>/__tests__/helpers/$1"
+  },
+  "testEnvironment": "node",
+  "preset": "ts-jest",
+  "testMatch": ["**/__tests__/**/*test.ts?(x)"],
+  "modulePathIgnorePatterns": ["<rootDir>/__tests__/helpers"],
+  "collectCoverageFrom": ["src/services/**/*.ts"],
+  "reporters": [
+    "default",
+    [
+      "./node_modules/jest-html-reporter",
+      {
+        "pageTitle": "File generator",
+        "outputPath": "coverage/index.html"
+      }
+    ]
+  ],
+  "testTimeout": 10000
+}
